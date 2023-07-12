@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-rxjs-learning',
@@ -7,24 +7,26 @@ import { Observable } from 'rxjs';
   styleUrls: ['./rxjs-learning.component.css'],
 })
 export class RxjsLearningComponent implements OnInit {
-  agents: Observable<string> | undefined;
-  agentName: string | undefined;
+  studentList = ['Mark', 'Ram', 'Lisa', 'Sam'];
+  students$: Observable<string[]> = of(this.studentList);
+  studentNames$: Observable<string> = of('Ram');
+  studentObj = {
+    id: 10,
+    name: 'Ram',
+  };
+  studentObs$ = of(this.studentObj);
+
   constructor() {}
   ngOnInit(): void {
-    this.agents = new Observable(
-      // Methods
-      function (observer) {
-        try {
-          observer.next('K'), observer.next('R'), observer.next('S');
-        } catch (e) {
-          observer.error(e);
-        }
-      }
-    );
+    this.students$.subscribe((data) => console.log(data));
+    this.studentNames$.subscribe((data) => console.log(data));
+    this.studentObs$.subscribe((d) => console.log(d));
 
-    this.agents.subscribe((data) => {
-      console.log(data);
-      this.agentName = data;
+    // Observable<T>: An Observable that synchronously emits the arguments described above and then immediately completes.
+    of(10, 20, 40).subscribe({
+      next: (value) => console.log('next', value),
+      error: (err) => console.log('error', err),
+      complete: () => console.log('the end'),
     });
   }
 }
