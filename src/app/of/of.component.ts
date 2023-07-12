@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, map, of } from 'rxjs';
 
 @Component({
-  selector: 'app-rxjs-learning',
-  templateUrl: './rxjs-learning.component.html',
-  styleUrls: ['./rxjs-learning.component.css'],
+  selector: 'app-of',
+  templateUrl: './of.component.html',
+  styleUrls: ['./of.component.css'],
 })
-export class RxjsLearningComponent implements OnInit {
+export class OfComponent implements OnInit {
   /**
    * of operator
    */

@@ -1,0 +1,8 @@
+<p>from works!</p>
+<div *ngIf="order">
+  {{ order }}
+</div>
+
+<div *ngFor="let item of orders$ | async">
+  {{ item }}
+</div>
