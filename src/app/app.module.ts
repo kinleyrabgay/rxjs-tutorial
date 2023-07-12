@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { RxjsLearningComponent } from './rxjs-learning/rxjs-learning.component';
 import { FromComponent } from './from/from.component';
 import { OfComponent } from './of/of.component';
+import { FromEventComponent } from './from-event/from-event.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RxjsLearningComponent,
     FromComponent,
-    OfComponent
+    OfComponent,
+    FromEventComponent
   ],
   imports: [
     BrowserModule,
