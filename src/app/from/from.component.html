@@ -1,8 +1,4 @@
 <p>from works!</p>
-<div *ngIf="order">
-  {{ order }}
-</div>
-
-<div *ngFor="let item of orders$ | async">
+<div *ngFor="let item of localArr">
   {{ item }}
 </div>
