@@ -7,6 +7,7 @@ import { RxjsLearningComponent } from './rxjs-learning/rxjs-learning.component';
 import { FromComponent } from './from/from.component';
 import { OfComponent } from './of/of.component';
 import { FromEventComponent } from './from-event/from-event.component';
+import { IntervalComponent } from './interval/interval.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FromEventComponent } from './from-event/from-event.component';
     RxjsLearningComponent,
     FromComponent,
     OfComponent,
-    FromEventComponent
+    FromEventComponent,
+    IntervalComponent
   ],
   imports: [
     BrowserModule,
