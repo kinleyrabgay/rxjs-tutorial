@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
 
 @Component({
   selector: 'app-rxjs-learning',
@@ -16,6 +16,9 @@ export class RxjsLearningComponent implements OnInit {
   };
   studentObs$ = of(this.studentObj);
 
+  source$ = of('Hello', 'RxJS', '!');
+  sourceArr$ = of(['Hello', 'RxJS', '!']);
+
   constructor() {}
   ngOnInit(): void {
     this.students$.subscribe((data) => console.log(data));
@@ -27,6 +30,24 @@ export class RxjsLearningComponent implements OnInit {
       next: (value) => console.log('next', value),
       error: (err) => console.log('error', err),
       complete: () => console.log('the end'),
+    });
+
+    of([1, 2, 3]).subscribe({
+      next: (value) => console.log('next', value),
+      error: (err) => console.log('error', err),
+      complete: () => console.log('the end'),
+    });
+
+    this.source$.subscribe((value) => {
+      console.log(value);
+    });
+
+    this.source$
+      .pipe(map((value) => value + ' ok'))
+      .subscribe((value) => console.log(value));
+
+    this.sourceArr$.subscribe((value) => {
+      console.log(value);
     });
   }
 }
