@@ -12,6 +12,7 @@ import { IntervalComponent } from './interval/interval.component';
 import { DebounceTimeComponent } from './debounce-time/debounce-time.component';
 import { TakeComponent } from './take/take.component';
 import { FirstComponent } from './first/first.component';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FirstComponent } from './first/first.component';
     DebounceTimeComponent,
     TakeComponent,
     FirstComponent,
+    FilterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
