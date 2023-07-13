@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { debounceTime, first, from, last } from 'rxjs';
+import { debounceTime, elementAt, first, from, last } from 'rxjs';
 
 @Component({
   selector: 'app-first',
@@ -8,9 +8,6 @@ import { debounceTime, first, from, last } from 'rxjs';
   styleUrls: ['./first.component.css'],
 })
 export class FirstComponent implements OnInit {
-  // define formGrou
-  searchForm!: FormGroup;
-  name!: FormControl;
   categories = [
     'Mobiles',
     'Some',
@@ -22,20 +19,9 @@ export class FirstComponent implements OnInit {
   catetories$ = from(this.categories);
   constructor() {}
   ngOnInit(): void {
-    this.searchForm = new FormGroup({
-      name: new FormControl('start search'),
-    });
-
-    this.searchForm
-      .get('name')
-      ?.valueChanges.pipe(debounceTime(3000))
-      .subscribe((d) => {
-        console.log(d);
-      });
-    this.catetories$.pipe(first(), last()).subscribe((d) => {
-      console.log(d);
-    });
+    /**
+     * elementAt (start: 0), return the value at index of the source
+     */
+    this.catetories$.pipe(elementAt(2)).subscribe((d) => console.log(d));
   }
-
-  readValue() {}
 }
