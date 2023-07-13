@@ -14,6 +14,7 @@ import { TakeComponent } from './take/take.component';
 import { FirstComponent } from './first/first.component';
 import { FilterComponent } from './filter/filter.component';
 import { DistinctComponent } from './distinct/distinct.component';
+import { MaxComponent } from './max/max.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DistinctComponent } from './distinct/distinct.component';
     FirstComponent,
     FilterComponent,
     DistinctComponent,
+    MaxComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
