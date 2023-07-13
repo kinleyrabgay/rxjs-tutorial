@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { debounceTime, filter } from 'rxjs';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-filter',
