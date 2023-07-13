@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { distinct, from, skip } from 'rxjs';
+import { count, distinct, from, skip } from 'rxjs';
 
 @Component({
   selector: 'app-distinct',
@@ -33,6 +33,11 @@ export class DistinctComponent implements OnInit {
      * skip operator : give back observable that will skip the first occurence
      * of the count user pass (how many values to skip: while giving value)
      */
-    this.catetories$.pipe(distinct(), skip(2)).subscribe((d) => console.log(d));
+    // this.catetories$.pipe(distinct(), skip(2)).subscribe((d) => console.log(d));
+
+    /**
+     * count operator: give the number of observable there
+     */
+    this.catetories$.pipe(count()).subscribe((d) => console.log(d));
   }
 }
